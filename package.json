@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://samundrak.github.io/simple-trello-clone-in-react-redux-react-dnd",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
   "devDependencies": {
     "gh-pages": "^0.12.0",
     "react-scripts": "0.9.5"
@@ -20,6 +18,8 @@
     "redux": "^3.6.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
