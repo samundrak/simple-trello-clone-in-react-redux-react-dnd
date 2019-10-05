@@ -47,9 +47,13 @@ export default (state = defaultState, actions) => {
       break;
     case consts.SWAP_CARD:
       const { src, target } = actions;
-      const tempCardStore = columns[src.columnIndex].cards[src.cardIndex];
-      columns[src.columnIndex].cards[src.cardIndex] = columns[target.columnIndex].cards[target.cardIndex];
-      columns[target.columnIndex].cards[target.cardIndex] = tempCardStore;
+      [
+        columns[src.columnIndex].cards[src.cardIndex], 
+        columns[target.columnIndex].cards[target.cardIndex]
+      ] = [
+        columns[src.columnIndex].cards[target.cardIndex],
+        columns[target.columnIndex].cards[src.cardIndex]
+      ]
       newState = { columns };
       break;
     default:
